@@ -1,0 +1,37 @@
+{
+  "name": "country",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "isactive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "state": {
+      "type": "hasMany",
+      "model": "state",
+      "foreignKey": "id_country"
+    },
+    "city": {
+      "type": "hasMany",
+      "model": "city",
+      "foreignKey": "id_country"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

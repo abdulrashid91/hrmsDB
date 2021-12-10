@@ -1,0 +1,36 @@
+{
+  "name": "state",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id_country": {
+      "type": "number",
+      "required": true,
+      "default": 1
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "isactive": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "country": {
+      "type": "belongsTo",
+      "model": "country",
+      "foreignKey": "id_country"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "regions": {
+    "dataSource": "hrmsDB",
+    "public": true
+  },
+  "Reviewer": {
+    "dataSource": "hrmsDB",
+    "public": true
+  },
+  "country": {
+    "dataSource": "hrmsDB",
+    "public": true
+  },
+  "state": {
+    "dataSource": "hrmsDB",
+    "public": true
+  },
+  "city": {
+    "dataSource": "hrmsDB",
+    "public": true
+  }
+}
