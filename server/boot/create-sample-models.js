@@ -13,6 +13,9 @@ module.exports = function(app) {
       console.log('> models created sucessfully');
     });
   });
+
+  
+
   //create reviewers
   function createReviewers(cb) {
     mysqlDs.automigrate('Reviewer', function(err) {
