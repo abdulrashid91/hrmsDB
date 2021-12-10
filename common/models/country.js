@@ -33,7 +33,7 @@ Country.remoteMethod (
 
   // remote method before hook
   Country.beforeRemote('getName', function(context, unused, next) {
-    console.log('Calling getName Remote Method using  remote method before hook Operation successfully successfully..!');
+    console.log('Calling getName Remote Method,using  remote method before hook Operation successfully successfully..!');
     next();
   });
 
