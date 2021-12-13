@@ -32,5 +32,9 @@
   "city": {
     "dataSource": "hrmsDB",
     "public": true
+  },
+  "Color": {
+    "dataSource": null,
+    "public": true
   }
 }
