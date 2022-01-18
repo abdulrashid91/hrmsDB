@@ -1,46 +1,24 @@
 {
-  "name": "city",
+  "name": "paymenttrans",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "id_country": {
-      "type": "number",
-      "required": true
-    },
-    "id_state": {
-      "type": "number",
-      "required": true
-    },
-    "name": {
+    "transactionId": {
       "type": "string",
       "required": true
     },
-    "description": {
-      "type": "string"
-    },
-    "amount": {
-      "type": "Number",
+    "processingFee": {
+      "type": "number",
       "dataType": "float",
       "precision": 18,
-      "scale": 2
-    },
-    "isactive": {
-      "type": "boolean",
-      "required": true,
-      "default": true
+      "scale": 6
     }
   },
   "validations": [],
-  "relations": {
-    "state": {
-      "type": "belongsTo",
-      "model": "state",
-      "foreignKey": "id_state"
-    }
-  },
+  "relations": {},
   "acls": [
     {
       "accessType": "*",

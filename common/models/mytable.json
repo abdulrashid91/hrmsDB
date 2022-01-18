@@ -1,27 +1,25 @@
 {
-  "name": "Color",
+  "name": "mytable",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "val": {
+    "name": {
       "type": "string"
     },
-    "votes": {
-      "type": "number"
+    "description": {
+      "type": "string",
+      "default": "null"
+    },
+    "amt": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],
   "relations": {},
-  "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    }
-  ],
+  "acls": [],
   "methods": {}
 }

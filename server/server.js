@@ -14,7 +14,8 @@ app.start = function() {
   // start the web server
   return app.listen(function() {
     app.emit('started');
-    const baseUrl = app.get('url').replace(/\/$/, '');
+    //const baseUrl = app.get('url').replace(/\/$/, '');
+	const baseUrl = "http://localhost:3000";  //prod
     console.log('Web server listening at: %s', baseUrl);
     if (app.get('loopback-component-explorer')) {
       const explorerPath = app.get('loopback-component-explorer').mountPath;
@@ -30,34 +31,53 @@ boot(app, __dirname, function(err) {
 
   // start the server if `$ node server.js`
   if (require.main === module)
-    
+  app.middleware('auth', loopback.token({
+    currentUserLiteral: 'me'
+}));
+// const emitter = new EventEmitter();
+// emitter.setMaxListeners(0);
+// // or 0 to turn off the limit
+// emitter.setMaxListeners(0);
+      app.start();
 
-      //app.start();
-  app.io = require('socket.io')(app.start());
-  require('socketio-auth')(app.io, {
-    authenticate: function (socket, value, callback) {
+      ///// Email Send Functionality Code //////////
 
-        var AccessToken = app.models.AccessToken;
-        //get credentials sent by the client
-        var token = AccessToken.find({
-          where:{
-            and: [{ userId: value.userId }, { id: value.id }]
-          }
-        }, function(err, tokenDetail){
-          if (err) throw err;
-          if(tokenDetail.length){
-            callback(null, true);
-          } else {
-            callback(null, false);
-          }
-        }); //find function..    
-      } //authenticate function..
-  });
+// var nodemailer = require('nodemailer');
 
-  app.io.on('connection', function(socket){
-    console.log('a user connected');
-    socket.on('disconnect', function(){
-        console.log('user disconnected');
-    });
-  });
+// var transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//  host: 'smtp.gmail.com',
+//    port: 587,
+//     secure: false,
+//     requireTLS: true,
+//     
+//   auth: {
+//     user: 'kalawant.abdulrashid@gmail.com',
+//     pass: 'uokgdmjqztyupxzm'
+//   }
+// });
+
+
+
+// var mailOptions = {
+//   from: 'kalawant.abdulrashid@gmail.com',
+//   to: 'ar.rashid06@gmail.com',
+//   subject: 'Sending Email using Node.js',
+//   text: 'That was easy!'
+// };
+
+
+
+// transporter.sendMail(mailOptions, function(error, info){
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log('Email sent: ' + info.response);
+//   }
+// });
+
+///////////// End of Cpde ////////////////////
+
+
+
 });

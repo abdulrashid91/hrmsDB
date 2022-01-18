@@ -32,5 +32,13 @@
   "city": {
     "dataSource": "hrmsDB",
     "public": true
+  },
+  "paymenttrans": {
+    "dataSource": "hrmsDB",
+    "public": true
+  },
+  "bacheckoutdata": {
+    "dataSource": "hrmsDB",
+    "public": true
   }
 }

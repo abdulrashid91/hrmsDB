@@ -4,6 +4,7 @@
   },
   "initial": {
     "compression": {},
+    "loopback-context#per-request": {},
     "helmet#xssFilter": {},
     "helmet#frameguard": {
       "params": {
@@ -31,7 +32,13 @@
     }
   },
   "session": {},
-  "auth": {},
+  "auth": {
+    "loopback#token": {
+      "params": {
+        "currentUserLiteral": "me"
+      }
+    }
+  },
   "parse": {},
   "routes": {
     "loopback#rest": {

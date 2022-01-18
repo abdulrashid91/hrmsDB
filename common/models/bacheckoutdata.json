@@ -1,0 +1,206 @@
+{
+  "name": "bacheckoutdata",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "clientEntityId": {
+      "type": "string",
+      "default": "null"    
+    },
+    "clientEntityName": {
+      "type": "string",
+      "default": "null" 
+    },
+    "subEntityId": {
+      "type": "string",     
+      "default": "null"
+    },
+    "subEntityName": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "processingChannelId": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "merchantCategoryCode": {
+      "type": "number",
+      "required": false,
+      "default": "null" 
+    },
+    "currencyAccountId": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "currencyAccountName": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "currencyAccountCustomId": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "actionType": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "actionId": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "paymentId": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "requestedOn": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "processedOn": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "fxRateApplied": {
+      "type": "number",
+      "dataType": "float",
+      "precision": 18,
+      "scale": 2
+    },
+    "holdingCurrency": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "fxTradeId": {
+      "type": "string",
+      "required": false,
+      "default": "null"
+    },
+    "payoutId": {
+      "type": "string",
+      "required": false,
+      "default": "null"
+    },
+    "reference": {
+      "type": "string",
+      "required": false,
+      "default": "null"
+    },
+    "paymentMethod": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "cardType": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "cardCategory": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "issuerCountry": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "entityCountry": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "region": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "mid": {
+      "type": "string",
+      "required": false,
+      "default": "null"
+    },
+    "responseCode": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "responseDescription": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    },
+    "breakdownType": {
+      "type": "string",
+      "required": false,
+      "default": "null"
+    },
+    "processingCurrencyAmount": {
+      "type": "number",
+      "dataType": "float",
+      "precision": 18,
+      "scale": 2
+    },
+    "entityCountryTaxCurrency": {
+      "type": "string",
+      "required": false,
+      "default": "null"
+    },
+    "taxFxRate": {
+      "type": "number",
+      "dataType": "float",
+      "precision": 18,
+      "scale": 2
+    },
+    "taxCurrencyAmount": {
+      "type": "number",
+      "dataType": "float",
+      "precision": 18,
+      "scale": 2
+    },
+    "status": {
+      "type": "string",
+      "required": false,
+      "default": "null" 
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
+      "property": "listCities"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "find"
+    }
+  ],
+  "methods": {}
+}

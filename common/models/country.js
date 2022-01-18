@@ -2,8 +2,11 @@
 
 module.exports = function(Country) {
 
-     // Return Country  name given an ID.
+  var Promise = require('bluebird');
   
+
+     // Return Country  name given an ID.
+  /*
      Country.getName = function(id, cb) {
         Country.findById(id, function (err, instance) {
         var response = "Name of Country is " + instance.name;
@@ -11,22 +14,47 @@ module.exports = function(Country) {
         console.log(response);
     });
   }
+*/
+  
 
- /* Country.getName = function (id, name, cb) {
-    Country.findOne({where: {id: id}}, function(err, modelInstance) {
-        //modelInstance has properties here and can be returned to
-        //the API call using the callback, for example:
-        cb(null, {"name": modelInstance.name});
-    }
-}*/
+Country.getName = async (callback) => {
+  try {
+    const data = await Country.find({where: {id: 101}});
+    return Promise.resolve(data);
+  } catch (e) {
+    console.error('Error DEscription :-',e);
+    return Promise.reject(e);
+  }
+};
+  
+Country.getAllName = function(cb) {
+ 
+  Country.find({where: {id: 101}},)
+  .then(function(result){
+   // ... // Called if the operation succeeds.
+    cb(null, result);
+  })
+  .catch(function(err){
+    console.log('Error DEscription :-',e);
+  })
+}
+Country.remoteMethod (
+  'getAllName', 
+  {
+   http: {path: '/getAllName', verb: 'get'},
+    returns: {arg: 'name', type: 'string'}
+   }
+);
+
+
 
 Country.remoteMethod (
     'getName', 
     {
      http: {path: '/getname', verb: 'get'},
      
-     accepts: {arg: 'id', type: 'number', http: { source: 'query' } },
-    // accepts: {arg: 'id', type: 'number'},
+    // accepts: {arg: 'id', type: 'number', http: { source: 'query' } },
+     accepts: {arg: 'id', type: 'number'},
       returns: {arg: 'name', type: 'string'}
      }
   );

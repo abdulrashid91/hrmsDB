@@ -5,6 +5,7 @@
   "options": {
     "validateUpsert": true
   },
+  "hidden": [],
   "properties": {
     "id_country": {
       "type": "number",
@@ -31,6 +32,12 @@
       "foreignKey": "id_country"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }

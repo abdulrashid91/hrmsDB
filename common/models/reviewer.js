@@ -1,13 +1,33 @@
 'use strict';
 
 module.exports = function(Reviewer) {
-
     
 
-    Reviewer.hello = function(msg, cb) {
+   /*
+  Reviewer.hello = function(msg, cb) {
         cb(null, 'Welcome :... ' + msg);
         
       }
+*/
+   
+   
+/*
+     Reviewer.hello = async function(msg) {    
+
+        return 'Greetings... '+msg ;
+    }
+    */
+
+    // Correct
+  
+    Reviewer.hello = function(msg) {
+      return new Promise((resolve, reject) => {
+          resolve('Greetings... ' + msg);
+      });
+  }
+  
+
+  
   
       Reviewer.messagedisplay = function(cb) {
         cb(null,' Simple Message Display Function is Defined...' );

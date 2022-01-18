@@ -8,5 +8,66 @@
     "name": "hrmsDB",
     "user": "root",
     "connector": "mysql"
+  },
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "myEmailDataSource": {
+    "name": "myEmailDataSource",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "kalawant.abdulrashid@gmail.com",
+          "pass": "RASHID2306"
+        }
+      }
+    ]
+  },
+  "myRESTdatasource": {
+    "name": "myRESTdatasource",
+    "baseURL": "",
+    "crud": false,
+    "connector": "rest",
+    "debug": "false",
+    "options": {
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "strictSSL": false
+    },
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://maps.googleapis.com/maps/api/geocode/{format=json}",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "query": {
+            "address": "{street},{city},{zipcode}",
+            "sensor": "{sensor=false}"
+          },
+          "responsePath": "$.results[0].geometry.location"
+        },
+        "functions": {
+          "geocode": [
+            "street",
+            "city",
+            "zipcode"
+          ]
+        }
+      }
+    ]
   }
 }

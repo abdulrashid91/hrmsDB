@@ -9,9 +9,30 @@
     "mixins": [
       "loopback/common/mixins",
       "loopback/server/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
       "../common/mixins",
       "./mixins"
     ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": true
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
   },
   "regions": {
     "dataSource": "hrmsDB",
@@ -33,8 +54,23 @@
     "dataSource": "hrmsDB",
     "public": true
   },
+  "paymenttrans": {
+    "dataSource": "hrmsDB",
+    "public": true
+  },
+  "bacheckoutdata": {
+    "dataSource": "hrmsDB",
+    "public": true
+  },
   "Color": {
     "dataSource": null,
+    "public": true
+  },
+  "Email": {
+    "dataSource": "myEmailDataSource"
+  },
+  "mytable": {
+    "dataSource": "hrmsDB",
     "public": true
   }
 }

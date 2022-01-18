@@ -13,6 +13,7 @@
   "dependencies": {
     "async": "^2.6.3",
     "asynch": "^0.5.2",
+    "bluebird": "^3.7.2",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "event-stream": "^4.0.1",
@@ -21,10 +22,14 @@
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.2.0",
     "loopback-connector-mysql": "^5.4.4",
+    "loopback-connector-rest": "^4.0.1",
+    "loopback-context": "^3.5.2",
+    "loopback-ds-timestamp-mixin": "^3.4.1",
+    "nodemailer": "^6.7.2",
     "serve-favicon": "^2.0.1",
-    "socket.io": "^4.4.0",
     "socketio-auth": "^0.1.1",
-    "strong-error-handler": "^4.0.0"
+    "strong-error-handler": "^4.0.0",
+    "xlsx": "^0.17.4"
   },
   "devDependencies": {
     "eslint": "^3.17.1",
